@@ -1,6 +1,6 @@
 console.log("Arrays part2")
 
-console.groupCollapsed("Map")
+console.groupCollapsed("map")
 
 // Map permite recorrer un array, con la posibilidad de retornar otro array
 
@@ -32,10 +32,10 @@ console.log(array2)
 
 console.groupEnd()
 
-console.group("reverse & toReversed")
+console.groupCollapsed("reverse & toReversed")
 // Invierten la lista, reverse lo muta y toReversed no.
 
-const alphabet = ["a","b","c","d","e","f","g","h"]
+const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
 //console.log(alphabet.reverse()) // Altera el orden del array, mutando el original, sin importar si lo guardo en otro o no
 
@@ -57,5 +57,45 @@ console.log(`Con el toReversed: ${alfabetoMilitar.toReversed()}`)
 alfabetoMilitar.reverse()
 console.log(`Con el reverse(): ${alfabetoMilitar} `)
 
+console.groupEnd()
+
+console.group("Sort")
+// Ordena el array
+
+let coders = [
+    "santiago",
+    "reycon",
+    "narciris",
+    "pablo",
+    "carolina",
+    "marlon",
+    "brandon",
+    "edson",
+    "carlos",
+    "esteban",
+    "shirly"
+]
+
+// console.table(coders.toSorted()) // no muta la lista original
+
+coders.sort() // muta la lista original
+
+
+let mercado = [
+    "arroz",
+    "papa",
+    "huevos",
+    "pan",
+    "leche",
+    "azucar",
+    "sal",
+    "aceite", 
+    "manzanas",
+    "zanahorias"
+]
+
+console.table(mercado)
+console.table(mercado.toSorted())
+console.table(mercado.toSorted().toReversed())
 
 console.groupEnd()
