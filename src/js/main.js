@@ -103,7 +103,8 @@ console.table(mercado.toSorted().toReversed())
 
 console.groupEnd()
 
-console.group("Filter")
+console.groupCollapsed("Filter")
+// filtra y devuelve otro array
 
 let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 let pares = []
@@ -143,5 +144,21 @@ let nombresConsonantes = coders.filter(nombre => {
 
 console.log(nombresVocal)
 console.log(nombresConsonantes)
+
+console.groupEnd()
+
+console.group("every y some")
+
+// every: valida una condición en cada elemento. Solo si todos cumplen, retorna el true
+// some: valida la condición en cada elemento. Si alguno cumple, retorna true
+
+let numerosNaturales = [22,-55,44,3,5,3,-2]
+
+const respuesta = numerosNaturales.every(numero => numero > 0) // false
+
+const respuesta2 = numerosNaturales.some(numero => numero > 0) // true
+
+console.log(respuesta)
+console.log(respuesta2)
 
 console.groupEnd()
