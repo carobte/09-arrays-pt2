@@ -59,7 +59,7 @@ console.log(`Con el reverse(): ${alfabetoMilitar} `)
 
 console.groupEnd()
 
-console.group("Sort")
+console.groupCollapsed("Sort")
 // Ordena el array
 
 let coders = [
@@ -73,13 +73,16 @@ let coders = [
     "edson",
     "carlos",
     "esteban",
-    "shirly"
+    "shirly",
+    "ana",
+    "andres",
+    "edwin",
+    "alexis"
 ]
 
 // console.table(coders.toSorted()) // no muta la lista original
 
 coders.sort() // muta la lista original
-
 
 let mercado = [
     "arroz",
@@ -89,7 +92,7 @@ let mercado = [
     "leche",
     "azucar",
     "sal",
-    "aceite", 
+    "aceite",
     "manzanas",
     "zanahorias"
 ]
@@ -97,5 +100,48 @@ let mercado = [
 console.table(mercado)
 console.table(mercado.toSorted())
 console.table(mercado.toSorted().toReversed())
+
+console.groupEnd()
+
+console.group("Filter")
+
+let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+let pares = []
+let impares = []
+
+pares = numeros.filter(numero => numero % 2 === 0)
+impares = numeros.filter(numero => numero % 2 !== 0)
+
+/* for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    
+} */
+
+// Lista de nombres (coders) filtrados, por vocales o no.
+
+/* let expresion = /^[aeiou]/ // expresión regular que evalua si inicia con vocales.
+
+let nombresVocal = coders.filter(nombre => {
+    return expresion.test(nombre) 
+    // .test evalua la expresión regular anterior a lo que le pase por parametro, en este caso cada nombre
+})
+
+let nombresConsonantes = coders.filter(nombre => {
+    return !expresion.test(nombre) 
+})
+
+ */
+
+let nombresVocal = coders.filter(nombre => {
+    return  nombre.startsWith("a") || nombre.startsWith("e") || nombre.startsWith("i") || nombre.startsWith("o") || nombre.startsWith("u") 
+}) 
+
+let nombresConsonantes = coders.filter(nombre => {
+    return !nombre.startsWith("a") && !nombre.startsWith("e") && !nombre.startsWith("i") && !nombre.startsWith("o") && !nombre.startsWith("u")
+})
+
+
+console.log(nombresVocal)
+console.log(nombresConsonantes)
 
 console.groupEnd()
